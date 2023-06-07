@@ -1,0 +1,200 @@
+import { Meta } from '@storybook/addon-docs';
+
+import colorIcon from './assets/icons_storybook.svg';
+import docuIcon from './assets/icon_docu.svg';
+import compIcon from './assets/icon_comp.svg';
+import atomIcon from './assets/icon_atoms.svg';
+
+<Meta title="Design System/Introduction" />
+
+<style>
+  {`
+    .subheading {
+      --mediumdark: '#999999';
+      font-weight: 900;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 6px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      margin-top: 40px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
+
+    @media (min-width: 620px) {
+      .link-list {
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+    .link-list {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 20px 30px 20px 15px;
+      border: 1px solid #00000010;
+      border-radius: 5px;
+      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
+      color: #333333;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .link-item:hover {
+      border-color: #1EA7FD50;
+      transform: translate3d(0, -3px, 0);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+    }
+
+    .link-item:active {
+      border-color: #1EA7FD;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .link-item strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .link-item img {
+      height: 3em;
+      width: 3em;
+      margin-right: 15px;
+      flex: none;
+    }
+
+    .link-item span {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .tip {
+      display: inline-block;
+      border-radius: 1em;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 700;
+      background: #E7FDD8;
+      color: #66BF3C;
+      padding: 4px 12px;
+      margin-right: 10px;
+      vertical-align: top;
+    }
+
+    .tip-wrapper {
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .tip-wrapper code {
+      font-size: 12px;
+      display: inline-block;
+    }
+  `}
+</style>
+
+# Welcome to MKG: a small Design System via Storybook
+(This example is based on the material available at [**Storybook/Tutorials**](https://storybook.js.org/tutorials/).)
+
+#### Design System: yet another modern buzzword?
+
+At first glance, one is reminded of the well-known concept of design patterns, which offer an abstract approach for solving problems on a more technical or software architecture-specific level.
+
+In the meantime, with design systems a well thought-out organization of existing and recurring UI components, color compositions, icons, and even layout standards has been established. The term design system stands for a professional pattern to systematically organize and simplify (partial) reuse of already existing UI front-end systems. In other words: to save working time!
+
+Abstractly, design systems could be seen as a pattern for the following problem:
+
+Given a set of UI components and guides derived from several projects. Is there a rough structure that I can follow to bundle all my work as a standalone system with the focus on reuse?
+
+cf. with the motivation provided by
+
+
+ [**Storybook/Tutorials**](https://storybook.js.org/tutorials/design-systems-for-developers/react/en/introduction/)
+ 
+ [**Understanding and Supporting the Design Systems
+Practice**](https://arxiv.org/pdf/2205.10713.pdf)
+
+NOTE: One big part of a usable Design System is a documentation, which is consitent with the current state of the underlying projects. And we all know: nobody likes to write documentations (exceptions confirm the rule). 
+Therefore, developers and UI-designers need a tool, which increases the motivation to work regulary on the style-guides.
+
+Inspired by this aspect, we consider [**Storybook**](https://storybook.js.org/):
+
+Official description copied form Storybook:
+"Storybook helps you build UI components in isolation from your app's business logic, data, and context.
+That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+
+Browse example stories now by navigating to them in the sidebar.
+View their code in the `stories` directory to learn how they work.
+We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages."
+
+
+
+<div className="subheading">Content</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="http://localhost:6006/?path=/docs/design-system-themes-doc--docs"
+    target="_blank"
+  >
+    <img  src={colorIcon} alt="colors" />
+    <span>
+      <strong>Color themes</strong>
+      Lecture example is based on Adobe Xd templates.
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://atomicdesign.bradfrost.com/chapter-2/"
+    target="_blank"
+  >
+    <img   src={atomIcon} alt="atomics"/>
+    <span>
+      <strong>Some atomics</strong>
+      Consider the work by Brad Frost.
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="http://localhost:6006/?path=/docs/design-system-ui-components-button-default--primary"
+    target="_blank"
+  >
+    <img src={compIcon} alt="components" />
+    <span>
+      <strong>UI components</strong>
+      See Button for some example documentation.
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/writing-docs/docs-page"
+    target="_blank"
+  >
+    <img src={docuIcon}  alt="doc" />
+    <span>
+      <strong>Documentation</strong>
+     This documentation is based on the storybook tutorial: write stories.
+    </span>
+  </a>
+</div>
+
+
+

@@ -1,0 +1,175 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs';
+import { ThemeProvider, convert, ensure } from '@storybook/theming';
+
+import {theme as baseDS, myVar0, myVar1, sampletext} from './theme_V1';
+import {colors} from './theme_V2';
+import gradientFile from '../assets/theme2.jpg';
+
+
+<Meta title="Design System/Themes/Doc" 
+ parameters={{
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#F2F6F1' },
+        { name: 'dark', value: '#213D1A' },
+      ],
+    },
+  }}
+/>
+
+
+# Documentation: 4 seasons theming 
+
+The idea wrt the development process of the concept for the primary lecture-example "our woods" is based on natural colors. The most 
+obvious way to integrate natural colors is to follow the 4 seasons-principal, since we all have to deal with them every year.
+
+Working with color-themes wrt the actual season is not limited to websites similar to our example from lecture. Moreover, 
+the development of new concepts in multiple business-areas (e.g. clothing-industry, food-production, automotive etc.) can be handled via the
+4-seasons approach. Therefore, creating a design-system from the status-quo in a early state (may) simplify the setup for the lecture-example and
+other future projects.
+
+
+## Color-Themes:
+Several libraries (e.g.  [**material-angular**](https://material.angular.io/guide/theming), [**Material Design**](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes)) follow strict patterns to 
+define project-specific color-themes. The following buzzwords are quite common and the
+concrete implemantation depends on the underlying framework, project or company:
+
+* Each theme includes at least 3 color palettes:
+  * primary
+  * scondary/accent
+  * warn
+
+  and based on the work of [**Material Design**](https://m2.material.io/design/color/the-color-system.html#color-usage-and-palettes) a palette includes up to 10 color levels
+  to provide harmonic color values.
+
+### Colors V1: a default theme
+with distinction between light and dark; this theme intends to serve as neutral "dark-theme"
+
+<ColorPalette>
+    {Object.entries(baseDS.coloring[myVar0]).map(([k, v]) => {
+        if (
+          typeof v === 'string' &&
+          (v.match(/^#/) || v.match(/^rgb/) || k.match(/color/i))
+        ) {
+          return <ColorItem key={k} title={myVar0+' '+k} colors={{ [k]: v }} />;
+        } else if (typeof v === 'object') {
+          return (
+            <ColorItem
+              key={k}
+              title={k}
+              colors={Object.entries(v).reduce(
+                (acc, [key, value]) =>
+                  typeof value === 'string' &&
+                  (value.match(/^#/) ||
+                    value.match(/^rgb/) ||
+                    key.match(/color/i))
+                    ? { ...acc, [key]: value }
+                    : acc,
+                {}
+              )}
+            />
+          );
+        }
+        return null;
+      })}
+</ColorPalette>
+
+<ColorPalette>
+ {Object.entries(baseDS.coloring).map(([k, v]) => {
+        if (
+          typeof v === 'string' &&
+          (v.match(/^#/) || v.match(/^rgb/) || k.match(/color/i))
+        ) {
+          return <ColorItem key={k} title={k} colors={{ [k]: v }} />;
+        } else if (typeof v === 'object') {
+          return (
+            <ColorItem
+              key={k}
+              title={k}
+              colors={Object.entries(v).reduce(
+                (acc, [key, value]) =>
+                  typeof value === 'string' &&
+                  (value.match(/^#/) ||
+                    value.match(/^rgb/) ||
+                    key.match(/color/i)) || value.match(/^rad/) 
+                    ? { ...acc, [key]: value }
+                    : acc,
+                {}
+              )}
+            />
+          );
+        }
+        return null;
+      })}
+</ColorPalette>
+
+
+### Colors V2:  autumn-theme
+Without distinction between light and dark.
+
+  Color guide: the dark-green at the bottom of the tree is used for the primary components, where the colors
+  from green over orange (secondary) to pink (mainly: warn) are used for the gradients to color the background, hover-effects, and highlighting.
+  
+<img src={gradientFile} width="60%" alt="gradient" /> 
+
+
+<ColorPalette>
+ {Object.entries(colors).map(([k, v]) => {
+        if (
+          typeof v === 'string' &&
+          (v.match(/^#/) || v.match(/^rgb/) || k.match(/color/i))
+        ) {
+          return <ColorItem key={k} title={k} colors={{ [k]: v }} />;
+        } else if (typeof v === 'object') {
+          return (
+            <ColorItem
+              key={k}
+              title={k}
+              colors={Object.entries(v).reduce(
+                (acc, [key, value]) =>
+                  typeof value === 'string' &&
+                  (value.match(/^#/) ||
+                    value.match(/^rgb/) ||
+                    key.match(/color/i)) || value.match(/^rad/) 
+                    ? { ...acc, [key]: value }
+                    : acc,
+                {}
+              )}
+            />
+          );
+        }
+        return null;
+      })}
+</ColorPalette>
+
+## Typography V1
+
+**Font:** Nunito Sans
+
+**Weights:** 400(regular) [700(bold), 800(extrabold), 900(black)]
+
+
+
+<Typeset
+  fontSizes={[
+    parseInt(baseDS.typo.size.s1.substring(0,baseDS.typo.size.s1.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.s2.substring(0,baseDS.typo.size.s2.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.s3.substring(0,baseDS.typo.size.s3.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.m1.substring(0,baseDS.typo.size.m1.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.m2.substring(0,baseDS.typo.size.m2.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.m3.substring(0,baseDS.typo.size.m3.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.l1.substring(0,baseDS.typo.size.l1.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.l2.substring(0,baseDS.typo.size.l2.length-3)*baseDS.sizeBase),
+    parseInt(baseDS.typo.size.l3.substring(0,baseDS.typo.size.l3.length-3)*baseDS.sizeBase),
+  ]}
+  fontWeight={baseDS.typo.weight.regular}
+  sampleText={sampletext}
+  fontFamily={baseDS.typo.type.primary}
+/>
+
+
+
+
+
+

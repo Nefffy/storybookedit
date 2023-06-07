@@ -24,7 +24,7 @@ to start the Storybook-Demo
 ### `npm start` 
 to start the React-Demo-App
 
-# otherwise
+#otherwise
 ## run npm install styled-components
 
 ## run npm install react-router-dom

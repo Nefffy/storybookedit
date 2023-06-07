@@ -55,7 +55,7 @@ const ButtonNav = styled.div<{ settings: ButtonProps }>`
   width:70%;
   justify-content: center;
   align-items: center;
-  font-family: ${(props) => props.theme.typo.primary};
+  font-family: ${(props) => props.theme.typo.type.primary};
   font-size: ${({ settings }) =>
   settings.size === "large" ? '1.4em' :'1.0em' };
   font-weight: ${({ settings }) =>

@@ -1,5 +1,4 @@
 import { useRef, MouseEvent } from "react";
-//import useGeolocation from "react-navigator-geolocation";
 import RegioInput from "../basics/RegioInput";
 import styled from "styled-components";
 //types
@@ -10,6 +9,8 @@ import { eventData } from "../../../pages/Overview";
 /*
  **********************************************************************************
  * styeld-components
+ * 
+ * TODO: intergrate the themes
  **********************************************************************************
  */
 
@@ -151,7 +152,7 @@ export default function Regio(props: {
         crd = pos.coords;
 
         // todo: more dynamic code wrt. to the starting position
-        // we need a db wrt. to town-names
+        // we need a db wrt. to (town-names -> lat & lon)
 
         // we create a new array via the filter-method
         // based on the original data set:
@@ -185,6 +186,12 @@ export default function Regio(props: {
   }
 
 
+
+  /*
+  * The idea with overlayRef is based on the 
+  * tutorial material of https://www.kindacode.com/
+  *
+  */
 
   // This function is called when the "Aktuelles" button gets clicked
   const openSearch = () => {

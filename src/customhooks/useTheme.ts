@@ -2,6 +2,12 @@ import { useEffect, useState } from 'react';
 import { setToLS, getFromLS } from '../App';
 import { DesignSystemBase } from "../stories/themes/theme_V1";
 
+/*
+* This custom hook is based on
+* https://css-tricks.com/theming-and-theme-switching-with-react-and-styled-components/
+*
+*/
+
 export const useTheme = () => {
   // add theme-data-schema or just type for demo:
 

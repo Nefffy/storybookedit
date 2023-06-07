@@ -1,5 +1,6 @@
 import { StoryObj, Meta } from "@storybook/react";
 import { Category } from "../index";
+import { Button } from "./ui-components/basics/Button";
 
 // The strangest bug of my live:
 //after upgrade Storybook 6... to 7... the usage of the DATA import does not work...
@@ -21,9 +22,6 @@ const dataCategories: Category[]= [
  *
  * are used to define the different stories wrt. the current theme
  * */
-
-import { Button } from "./ui-components/basics/Button";
-
 
 // More on https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const meta= {

@@ -24,7 +24,9 @@ to start the Storybook-Demo
 ### `npm start` 
 to start the React-Demo-App
 
-#otherwise
+You should see the same view as in the check_install.png
+
+# Otherwise
 ## run npm install styled-components
 
 ## run npm install react-router-dom

@@ -43,7 +43,9 @@ function App(props: PropData) {
   const themeSwitcher = () => {
 
     let mode = getFromLS('default');
-    const localTheme = getFromLS('theme');
+    let localTheme = getFromLS('theme');
+    //quick and dirty:
+    if (!localTheme) localTheme = getFromLS('default');
     if(mode.coloring.primary[100] === localTheme.coloring.primary[100]){
       mode = getFromLS('autumn');
     }

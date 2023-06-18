@@ -59,6 +59,7 @@ const dataCategories: Category[]= [
   { id: "cat-3", name: "Landschaften", text:"Lorem ipsum..."},
   { id: "cat-4", name: "Fakten (Check)", text:"Lorem ipsum..."},
   { id: "cat-5", name: "hallo c:", text:"testing"},
+
 ];
 
 export const dataRegional: Labeling[] = [

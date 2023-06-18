@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import {
   theme as theme1,
-  //theme2,
+  theme2,
 } from "../../themes/theme_V1";
 /*
  * This basic component returns a simple div to provide

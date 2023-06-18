@@ -19,6 +19,7 @@ import Content from "./stories/ui-components/composed/Content";
 
 
 
+
 function App(props: PropData) {
   const header = props.header;
   const catData = props.data.cat;
@@ -27,6 +28,7 @@ function App(props: PropData) {
   //wrt. theming:
   setToLS("default", theme1);
   setToLS("autumn", theme2);
+  //setToLS("vio", theme3);
   
   const { theme, themeLoaded } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);

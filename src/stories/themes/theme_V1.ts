@@ -5,6 +5,7 @@
 import {ColorScale,Typography,DesignSystemBase} from 'styled-components';
 
 import {colors as autumn} from './theme_V2';
+import {colors as vio} from './theme_V3';
 /*
 Some notes based on the research for the angular version:
 focus on UI color, font palettes and some other aspects

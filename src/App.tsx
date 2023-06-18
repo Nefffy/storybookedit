@@ -42,7 +42,7 @@ function App(props: PropData) {
   // no rerender?
   const themeSwitcher = () => {
 
-    let mode = getFromLS('default');
+    let mode = getFromLS('ColorScale');
     let localTheme = getFromLS('theme');
     //quick and dirty:
     if (!localTheme) localTheme = getFromLS('default');

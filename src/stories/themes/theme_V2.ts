@@ -6,16 +6,16 @@ import { create } from '@storybook/theming';
 
 export const colors = {
   primary: {
-    50: '#f4f7eb',
-    100: '#e2eccc',
-    200: '#d0dfac',
-    300: '#bdd28c',
-    400: '#afc974',
-    500: '#a2c05d',
-    600: '#93b054',
-    700: '#7f9c4a',
-    800: '#6c8841',
-    900: '#4C6632',
+    50: '#F3E5F5',
+    100: '#E1BEE7',
+    200: '#CE93D8',
+    300: '#BA68C8',
+    400: '#AB47BC',
+    500: '#9C27B0',
+    600: '#8E24AA',
+    700: '#7B1FA2',
+    800: '#6A1B9A',
+    900: '#4A148C',
   },
   primarycomplement: {
     50: '#f1e8f2',

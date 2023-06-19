@@ -3,7 +3,7 @@ import { create } from '@storybook/theming';
 
 
 //see theme1, this is just the autumn-version wrt. coloring
-
+//changed values due to V3 not being implemented for testing
 export const colors = {
   primary: {
     50: '#F3E5F5',
